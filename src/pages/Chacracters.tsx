@@ -1,12 +1,16 @@
+import { useState } from "react";
 import Wrapper from "../components/Wrapper";
 import CharacterPreview from "../components/Characters/CharacterPreview";
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTERS } from "../queries";
 import { Character } from "../types/Character";
+import Pagination from "../components/Pagination";
 
 const Characters: React.FC = () => {
+  const [page, setPage] = useState<number>(2);
+
   const { data, loading } = useQuery(GET_CHARACTERS, {
-    variables: { page: 1 },
+    variables: { page: page },
   });
 
   if (loading) {
@@ -29,6 +33,7 @@ const Characters: React.FC = () => {
           />
         ))}
       </div>
+      <Pagination page={page} setPage={setPage} />
     </Wrapper>
   );
 };

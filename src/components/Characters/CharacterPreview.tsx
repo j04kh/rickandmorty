@@ -12,7 +12,7 @@ const CharacterPreview: React.FC<Props> = ({ id, name, picture }) => {
         alt="Character avatar"
         className="h-12 w-12 mr-3 rounded-full"
       />
-      <h1>{name}</h1>
+      <h1 className="truncate">{name}</h1>
     </div>
   );
 };
