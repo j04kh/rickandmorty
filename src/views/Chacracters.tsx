@@ -5,9 +5,10 @@ import { useQuery } from "@apollo/client";
 import { GET_CHARACTERS } from "../queries";
 import { Character } from "../types/Character";
 import Pagination from "../components/Pagination";
+import { Link } from "react-router-dom";
 
 const Characters: React.FC = () => {
-  const [page, setPage] = useState<number>(2);
+  const [page, setPage] = useState<number>(1);
 
   const { data, loading } = useQuery(GET_CHARACTERS, {
     variables: { page: page },
@@ -26,11 +27,13 @@ const Characters: React.FC = () => {
     <Wrapper title="Characters">
       <div className="w-full h-[85%] overflow-y-scroll">
         {data.characters.results.map((character: Character) => (
-          <CharacterPreview
-            id={character.id}
-            name={character.name}
-            picture={character.image}
-          />
+          <Link to={`/characters/${character.id}`} key={character.id}>
+            <CharacterPreview
+              id={character.id}
+              name={character.name}
+              picture={character.image}
+            />
+          </Link>
         ))}
       </div>
       <Pagination page={page} setPage={setPage} />
