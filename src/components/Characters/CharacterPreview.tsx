@@ -1,10 +1,9 @@
 interface Props {
-  id: string;
   name: string;
   picture: string;
 }
 
-const CharacterPreview: React.FC<Props> = ({ id, name, picture }) => {
+const CharacterPreview: React.FC<Props> = ({ name, picture }) => {
   return (
     <div className="w-full h-16 my-1 px-4 bg-gray-900 bg-opacity-90 rounded-md flex items-center">
       <img

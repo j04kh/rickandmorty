@@ -28,15 +28,11 @@ const Characters: React.FC = () => {
       <div className="w-full h-[85%] overflow-y-scroll">
         {data.characters.results.map((character: Character) => (
           <Link to={`/characters/${character.id}`} key={character.id}>
-            <CharacterPreview
-              id={character.id}
-              name={character.name}
-              picture={character.image}
-            />
+            <CharacterPreview name={character.name} picture={character.image} />
           </Link>
         ))}
       </div>
-      <Pagination page={page} setPage={setPage} />
+      <Pagination view="Characters" page={page} setPage={setPage} />
     </Wrapper>
   );
 };

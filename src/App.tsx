@@ -3,8 +3,9 @@ import Layout from "./components/Layout";
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import Home from "./views/Home";
-import Characters from "./views/Chacracters";
+import Characters from "./views/Characters";
 import Character from "./views/Character";
+import Episodes from "./views/Episodes";
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/characters" element={<Characters />} />
         <Route path="/characters/:id" element={<Character />} />
+        <Route path="/episodes" element={<Episodes />} />
       </Routes>
     </Layout>
   );
