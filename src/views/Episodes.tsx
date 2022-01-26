@@ -6,6 +6,7 @@ import { Episode } from "../types/Character";
 import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination";
 import EpisodePreview from "../components/Episodes/EpisodePreview";
+import Loading from "../components/Loading";
 
 const Episodes: React.FC = () => {
   const [page, setPage] = useState<number>(1);
@@ -15,13 +16,7 @@ const Episodes: React.FC = () => {
   });
 
   if (loading) {
-    return (
-      <Wrapper title="Episodes 📺">
-        <div className="w-full h-[85%] overflow-y-scroll">
-          <h1>Loading...</h1>
-        </div>
-      </Wrapper>
-    );
+    return <Loading title="Episodes" />;
   }
 
   return (

@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTER } from "../queries";
 import { Episode } from "../types/Character";
+import Loading from "../components/Loading";
 
 const Character: React.FC = () => {
   const params = useParams();
@@ -12,13 +13,7 @@ const Character: React.FC = () => {
   });
 
   if (loading) {
-    return (
-      <Wrapper title="Characters">
-        <div className="w-full h-[85%] overflow-y-scroll">
-          <h1>Loading...</h1>
-        </div>
-      </Wrapper>
-    );
+    return <Loading title="Episodes" />;
   }
 
   return (

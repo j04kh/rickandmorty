@@ -6,6 +6,7 @@ import { GET_CHARACTERS } from "../queries";
 import { Character } from "../types/Character";
 import Pagination from "../components/Pagination";
 import { Link } from "react-router-dom";
+import Loading from "../components/Loading";
 
 const Characters: React.FC = () => {
   const [page, setPage] = useState<number>(1);
@@ -15,13 +16,7 @@ const Characters: React.FC = () => {
   });
 
   if (loading) {
-    return (
-      <Wrapper title="Characters">
-        <div className="w-full h-[85%] overflow-y-scroll">
-          <h1>Loading...</h1>
-        </div>
-      </Wrapper>
-    );
+    return <Loading title="Episodes" />;
   }
   return (
     <Wrapper title="Characters">
