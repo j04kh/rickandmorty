@@ -2,11 +2,11 @@ import { useState } from "react";
 import { GET_LOCATIONS } from "../queries/getLocations";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
-import { Location } from "../types";
 import Loading from "../components/Loading";
 import Wrapper from "../components/Wrapper";
 import Pagination from "../components/Pagination";
 import LocationPreview from "../components/Locations/LocationPreview";
+import type { Location } from "../types";
 
 const Locations: React.FC = () => {
   const [page, setPage] = useState<number>(1);

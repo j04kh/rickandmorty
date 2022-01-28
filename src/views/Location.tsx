@@ -1,7 +1,7 @@
 import { GET_LOCATION } from "../queries";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router";
-import { Character } from "../types";
+import type { Character } from "../types";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
 import Wrapper from "../components/Wrapper";

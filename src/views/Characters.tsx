@@ -3,10 +3,10 @@ import Wrapper from "../components/Wrapper";
 import CharacterPreview from "../components/Characters/CharacterPreview";
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTERS } from "../queries";
-import { Character } from "../types";
 import Pagination from "../components/Pagination";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
+import type { Character } from "../types";
 
 const Characters: React.FC = () => {
   const [page, setPage] = useState<number>(1);

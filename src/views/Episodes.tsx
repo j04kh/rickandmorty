@@ -2,11 +2,11 @@ import { useState } from "react";
 import Wrapper from "../components/Wrapper";
 import { useQuery } from "@apollo/client";
 import { GET_EPISODES } from "../queries";
-import { Episode } from "../types";
 import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination";
 import EpisodePreview from "../components/Episodes/EpisodePreview";
 import Loading from "../components/Loading";
+import type { Episode } from "../types";
 
 const Episodes: React.FC = () => {
   const [page, setPage] = useState<number>(1);

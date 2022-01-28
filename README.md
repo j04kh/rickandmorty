@@ -8,9 +8,9 @@ All data is fetched from the [Rick and Morty GraphQL API](https://rickandmortyap
 
 ## Overview
 
-![home](src/assets/screenshots/home.png)
-![episode](src/assets/screenshots/episode.png)
-![character](src/assets/screenshots/character.png)
+![home](src/assets/screenshots/home.png?raw=true)
+![episode](src/assets/screenshots/episode.png?raw=true)
+![character](src/assets/screenshots/character.png?raw=true)
 
 ### Built With
 

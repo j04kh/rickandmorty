@@ -2,9 +2,9 @@ import Wrapper from "../components/Wrapper";
 import { useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTER } from "../queries";
-import { Episode } from "../types";
 import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
+import type { Episode } from "../types";
 
 const Character: React.FC = () => {
   const params = useParams();
