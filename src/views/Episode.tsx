@@ -27,7 +27,7 @@ const Episode: React.FC = () => {
         <h2 className="mt-4">Air date: </h2>
         <h2 className="font-light">{data.episode.air_date}</h2>
         <h2 className="mt-8">Characters on this episode:</h2>
-        <ul className="w-full max-w-md h-[60%] mt-3 px-3 py-1 flex flex-col text-sm text-left bg-gray-800 rounded-md overflow-y-scroll">
+        <ul className="w-full max-w-md h-[60%] mt-3 px-3 py-1 flex flex-col text-sm text-left bg-gray-800 bg-opacity-70 rounded-md overflow-y-scroll">
           {data.episode.characters.map((character: Character) => (
             <Link to={`/characters/${character.id}`} key={character.id}>
               <li>
