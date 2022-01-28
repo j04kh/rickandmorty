@@ -9,8 +9,12 @@ const Home: React.FC = () => {
         <Link to="/characters">
           <Category title="CHARACTERS" />
         </Link>
-        <Category title="EPISODES" />
-        <Category title="LOCATIONS" />
+        <Link to="/episodes">
+          <Category title="EPISODES" />
+        </Link>
+        <Link to="/locations">
+          <Category title="LOCATIONS" />
+        </Link>
       </div>
     </Wrapper>
   );
