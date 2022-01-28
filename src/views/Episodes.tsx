@@ -16,7 +16,7 @@ const Episodes: React.FC = () => {
   });
 
   if (loading) {
-    return <Loading title="Episodes" />;
+    return <Loading title="Loading episodes..." />;
   }
 
   return (
@@ -24,7 +24,7 @@ const Episodes: React.FC = () => {
       <div className="w-full h-[85%] overflow-y-scroll">
         {data.episodes.results.map((episode: Episode) => (
           <Link to={`/episodes/${episode.id}`} key={episode.id}>
-            <EpisodePreview id={episode.id} name={episode.name} />
+            <EpisodePreview name={episode.name} episode={episode.episode} />
           </Link>
         ))}
       </div>

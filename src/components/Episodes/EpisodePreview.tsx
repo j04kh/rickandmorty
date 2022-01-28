@@ -1,12 +1,14 @@
 interface Props {
-  id: string;
   name: string;
+  episode: string;
 }
 
-const EpisodePreview: React.FC<Props> = ({ id, name }) => {
+const EpisodePreview: React.FC<Props> = ({ name, episode }) => {
   return (
     <div className="w-full h-8 my-1 px-4 bg-gray-900 bg-opacity-90 rounded-md flex items-center">
-      <p className="truncate">{name}</p>
+      <p className="truncate">
+        {name} - <span className="text-sm text-gray-600">{episode}</span>
+      </p>
     </div>
   );
 };

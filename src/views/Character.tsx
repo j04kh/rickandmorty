@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 import { GET_CHARACTER } from "../queries";
 import { Episode } from "../types/Character";
 import Loading from "../components/Loading";
+import { Link } from "react-router-dom";
 
 const Character: React.FC = () => {
   const params = useParams();
@@ -13,7 +14,7 @@ const Character: React.FC = () => {
   });
 
   if (loading) {
-    return <Loading title="Episodes" />;
+    return <Loading title="Loading character..." />;
   }
 
   return (
@@ -34,11 +35,16 @@ const Character: React.FC = () => {
         <h2>Episodes:</h2>
         <ul className="w-full max-w-md h-[30%] mt-2 px-3 py-1 flex flex-col text-sm text-left bg-gray-800 rounded-md overflow-y-scroll">
           {data.character.episode.map((ep: Episode) => (
-            <li key={ep.id}>
-              <p className="truncate">{ep.name}</p>
-            </li>
+            <Link to={`/episodes/${ep.id}`}>
+              <li key={ep.id}>
+                <p className="truncate">{ep.name}</p>
+              </li>
+            </Link>
           ))}
         </ul>
+        <p className="mt-3 font-light text-sm text-gray-500">
+          *Tap on characters names to see details
+        </p>
       </div>
     </Wrapper>
   );

@@ -17,4 +17,5 @@ export type Location = {
 export type Episode = {
   id: string;
   name: string;
+  episode: string;
 };

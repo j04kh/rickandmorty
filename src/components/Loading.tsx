@@ -12,7 +12,7 @@ const Loading: React.FC<Props> = ({ title }) => {
         <img
           src={LoadingSpinner}
           alt="Spinner"
-          className="animate-spin mb-12 w-[55%]"
+          className="animate-spin mb-12 w-[55%] opacity-60"
         />
       </div>
     </Wrapper>

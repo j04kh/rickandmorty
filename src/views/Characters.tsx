@@ -16,7 +16,7 @@ const Characters: React.FC = () => {
   });
 
   if (loading) {
-    return <Loading title="Episodes" />;
+    return <Loading title="Loading characters..." />;
   }
   return (
     <Wrapper title="Characters">
