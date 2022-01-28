@@ -37,8 +37,8 @@ const Character: React.FC = () => {
         <h2>Episodes:</h2>
         <ul className="w-full max-w-md h-[30%] mt-2 px-3 py-1 flex flex-col text-sm text-left bg-gray-800 rounded-md overflow-y-scroll">
           {data.character.episode.map((ep: Episode) => (
-            <Link to={`/episodes/${ep.id}`}>
-              <li key={ep.id}>
+            <Link to={`/episodes/${ep.id}`} key={ep.id}>
+              <li>
                 <p className="truncate">{ep.name}</p>
               </li>
             </Link>
