@@ -3,7 +3,7 @@ import { GET_EPISODE } from "../queries";
 import { useParams } from "react-router";
 import Loading from "../components/Loading";
 import Wrapper from "../components/Wrapper";
-import { Character } from "../types/Character";
+import { Character } from "../types";
 import { Link } from "react-router-dom";
 
 const Episode: React.FC = () => {

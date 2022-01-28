@@ -10,7 +10,7 @@ const Pagination: React.FC<Props> = ({ page, setPage, view }) => {
   if (view === "Episodes") {
     maxPage = 3;
   } else if (view === "Locations") {
-    maxPage = 100;
+    maxPage = 7;
   }
 
   return (

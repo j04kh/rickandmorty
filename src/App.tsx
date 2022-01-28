@@ -7,6 +7,7 @@ import Characters from "./views/Characters";
 import Character from "./views/Character";
 import Episodes from "./views/Episodes";
 import Episode from "./views/Episode";
+import Locations from "./views/Locations";
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Route path="/characters/:id" element={<Character />} />
         <Route path="/episodes" element={<Episodes />} />
         <Route path="/episodes/:id" element={<Episode />} />
+        <Route path="/locations" element={<Locations />} />
       </Routes>
     </Layout>
   );

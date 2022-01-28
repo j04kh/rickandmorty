@@ -2,7 +2,7 @@ import { useState } from "react";
 import Wrapper from "../components/Wrapper";
 import { useQuery } from "@apollo/client";
 import { GET_EPISODES } from "../queries";
-import { Episode } from "../types/Character";
+import { Episode } from "../types";
 import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination";
 import EpisodePreview from "../components/Episodes/EpisodePreview";
@@ -21,13 +21,13 @@ const Episodes: React.FC = () => {
 
   return (
     <Wrapper title="Episodes 📺">
-      <div className="w-full h-[85%] overflow-y-scroll">
+      <ul className="w-full h-[85%] overflow-y-scroll">
         {data.episodes.results.map((episode: Episode) => (
           <Link to={`/episodes/${episode.id}`} key={episode.id}>
             <EpisodePreview name={episode.name} episode={episode.episode} />
           </Link>
         ))}
-      </div>
+      </ul>
       <Pagination view="Episodes" page={page} setPage={setPage} />
     </Wrapper>
   );

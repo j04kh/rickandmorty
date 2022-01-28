@@ -2,7 +2,7 @@ import Wrapper from "../components/Wrapper";
 import { useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTER } from "../queries";
-import { Episode } from "../types/Character";
+import { Episode } from "../types";
 import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
 
@@ -29,9 +29,11 @@ const Character: React.FC = () => {
         <h2>Status: {data.character.status}</h2>
         <h2>Gender: {data.character.gender}</h2>
         <h2 className="mt-2">Location:</h2>
-        <p className="px-4 py-1 my-1 bg-teal-900 text-sm truncate rounded-md">
-          {data.character.location.name}
-        </p>
+        <Link to={`/locations/${data.character.location.id}`}>
+          <p className="px-4 py-1 my-1 bg-teal-900 text-sm truncate rounded-md">
+            {data.character.location.name}
+          </p>
+        </Link>
         <h2>Episodes:</h2>
         <ul className="w-full max-w-md h-[30%] mt-2 px-3 py-1 flex flex-col text-sm text-left bg-gray-800 rounded-md overflow-y-scroll">
           {data.character.episode.map((ep: Episode) => (

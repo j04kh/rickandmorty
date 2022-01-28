@@ -12,6 +12,8 @@ export type Character = {
 export type Location = {
   id: string;
   name: string;
+  dimension: string;
+  residents: Character[];
 };
 
 export type Episode = {
